@@ -1,6 +1,6 @@
 addEventListener("load", init, false);
 
-let mieren = [];
+let mieren = [], score = 0;
 
 function init() {
     document.querySelector("#maak").addEventListener("click", handleMaak, false);
@@ -61,6 +61,9 @@ function handleBeweeg() {
 }
 
 function handleVerpletter(event) {
+    score++;
+    document.querySelector(".score").innerHTML = "Score: " + score;
+    console.log(score);
     event.target.setAttribute("src", "../images/ant_dead.png");
     event.target.setAttribute("alt", "dode mier");
     event.target.setAttribute("class", "dood");
