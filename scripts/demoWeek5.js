@@ -33,19 +33,17 @@ class Mier {
 
     beweeg() {
         if(this.node.classList.contains("levend")) {
-            this.x += Math.floor(Math.random()*11)-5;
+            this.x += Math.floor(Math.random()*21)-5;
             this.y += Math.floor(Math.random()*11)-5;
-            this.rotation += Math.floor(Math.random()*21)-10;
+            this.rotation += Math.floor(Math.random()*41)-10;
             this.updateImageTag();
         }
     }
 }
 
 function handleMaak() {
-    console.log("Maak knop wordt ingedrukt");
     let div = document.querySelector("#mieren");
     let aantal = document.querySelector("#aantal").value;
-
 
     for(let i = 0; i < aantal; i++) {
         let mier = new Mier();
@@ -55,7 +53,6 @@ function handleMaak() {
 }
 
 function handleBeweeg() {
-    console.log("Beweeg knop wordt ingedrukt");
     setInterval(function() {
         for(let i = 0; i < mieren.length; i++) {
             mieren[i].beweeg();
