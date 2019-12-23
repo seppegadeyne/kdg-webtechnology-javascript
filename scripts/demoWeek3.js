@@ -159,7 +159,40 @@ i = 10;
 i /= 2;
 console.log(i);
 
-document.querySelector("span").innerText =  document.getElementsByTagName("li").length;
-console.log(document.getElementsByClassName("list")[0].innerText);
+addEventListener("load", kleuren, false);
 
+function kleuren() {
+    document.querySelector("span").innerText =  document.getElementsByTagName("li").length;
+    console.log(document.getElementsByClassName("list")[0].innerText);
+    document.getElementById("rood").style.color = "red";
+    document.getElementById("groen").style.color = "green";
+    document.getElementById("blauw").style.color = "blue";
+    document.querySelector(".kleuren > p:nth-of-type(2)").innerHTML = "De lijst bevat echte kleuren";
+    document.querySelectorAll(".list")[0].setAttribute("class", "list eerste");
+    document.querySelectorAll(".list")[1].setAttribute("class", "list tweede");
+    document.querySelectorAll(".list")[2].setAttribute("class", "list derde");
+
+    document.querySelector(".kleuren > ul").addEventListener("mouseover", doeKleuren, false)
+}
+
+function doeKleuren(event) {
+    document.querySelector(".kleuren > ul").appendChild(document.createElement("li")).innerText = event;
+}
+
+
+
+
+document.querySelector(".propagation > p").addEventListener("click", pClicked, true);
+document.querySelector(".propagation > p > a").addEventListener("click", aClicked, false);
+
+function pClicked(event) {
+    alert("P " + event.target + "clicked!");
+    event.stopPropagation();
+    event.preventDefault();
+}
+
+function aClicked(event) {
+    alert("A " + event.target + "clicked!");
+    event.preventDefault();
+}
 
