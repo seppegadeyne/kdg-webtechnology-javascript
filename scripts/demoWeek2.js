@@ -115,3 +115,115 @@ winkelKar.voegProductToe(new Product("Taart", 5));
 winkelKar.voegProductToe(new Product("Groentjes", 6));
 winkelKar.toonAfrekening();
 console.log(winkelKar.producten);
+
+
+let naam = "Senne";
+let naamArray = [];
+
+for(let i = 0; i < naam.length; i++) {
+    naamArray.push(naam.charAt(i));
+}
+
+naamArray = naamArray.reverse();
+console.log(naamArray.join(""));
+naamArray.forEach(element => {
+    console.log(element);    
+});
+
+//SORTEREN VAN NUMMERS
+let numbers = [20,1,4,7,90,200,100,3,2,4];
+numbers.sort(function(a,b) {
+    return a - b;
+});
+console.log(numbers);
+
+function compare(a, b) {
+    return a - b;
+}
+let data = [100,200,2,43,56];
+console.log(data.sort(compare).reverse());
+console.log("HOOGSTE: " + Math.max(data.join()));
+
+let average = 1;
+for(let i = 0; i < numbers.length; i++) {
+    average += numbers[i];
+}
+console.log("Gemiddelde is: " + average / numbers.length);
+
+let kwadraten = [];
+let kwadraat = 1, i = 1;
+while(kwadraat < 1000) {
+    kwadraat = i * i;
+    if (kwadraat < 1000) kwadraten.push(kwadraat);
+    i++;
+}
+
+console.log(kwadraten);
+
+function argumenten() {
+    let result = [];
+    for(let i = 0; i < arguments.length; i++) {
+        result.push(arguments[i]);
+    }
+    return result;
+}
+
+console.log(argumenten(1,2,4,"boe","joske","lorum"));
+
+let volledigeNaam = "Senne Tuulenpoika Gadeyne"
+function initialen(naam) {
+    let initialenArray = volledigeNaam.trim().split(" ");
+    if(initialenArray.length > 1) {
+        let initialenTekst = ""; 
+        initialenArray.forEach(element => {
+            initialenTekst += element.charAt(0) + ".";
+        });
+        return initialenTekst;
+    } else {
+        return false;
+    }   
+}
+
+console.log(initialen(volledigeNaam));
+
+let datum = new Date();
+console.log(datum);
+console.log(datum.getHours() + ":" + datum.getMinutes());
+
+let pi = Math.PI;
+
+
+rechthoek = {
+  lengte: 10,
+  breedte: 5,
+  oppervlakte: function() {
+    console.log("Oppervlakte = " + this.lengte * this.breedte);
+  },
+  omtrek: function() {
+      console.log("Omtrek = " + (this.lengte + this.breedte) * 2);
+  }
+}
+
+rechthoek.oppervlakte();
+rechthoek.omtrek();
+
+class Rechthoek {
+    constructor(lengte, breedte) {
+        this.lengte = lengte;
+        this.breedte = breedte;
+    }
+    oppervlakte() {
+        if(isNaN(this.lengte) || isNaN(this.breedte)) {
+            return "Geen geldige invoer";
+        } else {
+            return this.lengte * this.breedte;
+        }
+    }
+    omtrek() {
+        return (this.lengte + this.breedte) * 2;
+    }
+}
+
+let rechthoekObject = new Rechthoek(10, 5);
+console.log("Oppervlakte: " + rechthoekObject.oppervlakte());
+console.log("Omtrek: " + rechthoekObject.omtrek());
