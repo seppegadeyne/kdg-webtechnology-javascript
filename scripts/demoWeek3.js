@@ -159,3 +159,7 @@ i = 10;
 i /= 2;
 console.log(i);
 
+document.querySelector("span").innerText =  document.getElementsByTagName("li").length;
+console.log(document.getElementsByClassName("list")[0].innerText);
+
+
