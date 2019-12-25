@@ -41,3 +41,16 @@ function getParam() {
 }
 
 getParam();
+
+let sayHello = (name, age) => {
+    let msg = `Hallo ${name}, je bent ${age} jaar.`;
+    return msg;
+}
+console.log(sayHello("Joris", 28));
+
+let tweedeArtikel = `
+    <h1>Dit is een titel</h1>
+    <p>En hier is een paragraaf met tekst.</p>
+`;
+
+document.querySelector(".tweedeArtikel").innerHTML = tweedeArtikel;
