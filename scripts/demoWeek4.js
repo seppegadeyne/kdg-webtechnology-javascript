@@ -54,3 +54,16 @@ let tweedeArtikel = `
 `;
 
 document.querySelector(".tweedeArtikel").innerHTML = tweedeArtikel;
+
+function logPersoon({naam = "onbekend", email = "onbekend", leeftijd = -1} = {}) {
+    console.log("Naam: ", naam);
+    console.log("E-mail: ", email);
+    console.log("Leeftijd: ", leeftijd);
+}
+
+let persoon = {
+    naam: "Peter Kassenaar",
+    email: "info@kassenaar.be"
+};
+
+logPersoon(persoon);
